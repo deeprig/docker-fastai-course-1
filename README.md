@@ -37,7 +37,7 @@ The notebooks are setup to save keras models to `/home/docker/.keras/models`.
 You can create another volume for the models so the data persists.
 
 ```bash
-docker run -it -p 8888:8888 -v /Users/yourname/data:/home/docker/fastai-courses/deeplearning1/nbs/data -v /Users/yourname/models:/home/docker/.keras/models deeprig/fastai-course-1
+docker run -it -p 8888:8888 -v /Users/yourname/data:/home/docker/fastai-courses/deeplearning1/nbs/data -v /Users/yourname/models:/tmp/.keras/models deeprig/fastai-course-1
 ```
 
 ## Installing packages
