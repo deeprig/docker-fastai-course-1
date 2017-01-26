@@ -28,10 +28,17 @@ Docker containers are designed to be ephemeral, so if you need persistent data f
 For example, if your data directory is at `/Users/yourname/data`, start your container with this command:
 
 ```bash
-docker run -it -p 8888:8888 -v /Users/yourname/data:/home/docker/data deeprig/fastai-course-1
+docker run -it -p 8888:8888 -v /Users/yourname/data:/home/docker/fastai-courses/deeplearning1/nbs/data deeprig/fastai-course-1
 ```
 
 Your local data directory will now be visible in the container at `/home/docker/data`.
+
+The notebooks are setup to save keras models to `/home/docker/.keras/models`.
+You can create another volume for the models so the data persists.
+
+```bash
+docker run -it -p 8888:8888 -v /Users/yourname/data:/home/docker/fastai-courses/deeplearning1/nbs/data -v /Users/yourname/models:/home/docker/.keras/models deeprig/fastai-course-1
+```
 
 ## Installing packages
 All packages should ideally be part of the Dockerfile. If something is missing, please open an issue or submit a PR to update the Dockerfile. If you need to install something as a workaround, follow the steps below:
