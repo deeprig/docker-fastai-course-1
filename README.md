@@ -33,7 +33,7 @@ docker run -it -p 8888:8888 -v /Users/yourname/data:/home/docker/fastai-courses/
 
 Your local data directory will now be visible in the container at `/home/docker/data`.
 
-The notebooks are setup to save keras models to `/home/docker/.keras/models`.
+The notebooks save keras models to `/tmp/.keras/models`,
 You can create another volume for the models so the data persists.
 
 ```bash
