@@ -1,0 +1,17 @@
+version: '2'
+services:
+  cpu:
+    build: .
+    volumes:
+     - '${HOME}/fastai:/home/docker/data'
+    ports:
+     - 8888:8888
+  gpu:
+    build: .
+    volumes:
+     - '${HOME}/fastai:/home/docker/data'
+    ports:
+     - 8888:8888
+    devices:
+     - /dev/nvidia0
+
